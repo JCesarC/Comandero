@@ -1,1 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body {height: 100%; margin: 0; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.wrapper{
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+.footer, .push {
+  height: 50px;
+}
+
+.footer{
+    margin-top: 15px;
+    color: #fff;
+    background: #673ab7;
+}

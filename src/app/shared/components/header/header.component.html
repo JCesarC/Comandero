@@ -1,0 +1,65 @@
+<mat-toolbar color="primary">
+    <ng-container >
+     
+    </ng-container>
+    <span>Restaurante La Teja</span>
+    <span class="spacer"></span>
+    <a  mat-button
+    *ngIf="!isLogged; else viewLogout"
+    routerLink="/login">Login Administrador</a>
+
+    <a *ngIf="!isLoggedCliente"  mat-button
+    
+    routerLink="/login">Login Administrador</a>
+    
+    <a *ngIf="!isLoggedCliente; else viewLog"  mat-button
+    
+    routerLink="/signup">Acceder Cliente</a>
+
+    <a 
+    *ngIf="isLoggedCliente"
+    mat-button
+    
+    routerLink="/cliente/menu">Menú</a>
+
+    <a *ngIf="isLoggedCliente"
+      mat-button
+    
+    routerLink="/cliente/cart">Carrito</a>
+
+    <ng-container>
+      
+    </ng-container>
+    
+
+    <ng-container *ngIf="isAdmin ==='admin'">
+ 
+
+      <a mat-button
+    
+      routerLink="/admin/ordenes">Ordenes</a>
+
+    </ng-container>
+    
+    
+  </mat-toolbar>
+  
+  <ng-template #viewLogout>
+    <ng-container  *ngIf="isAdmin ==='admin'">
+      <div>
+        <a mat-button (click)="onLogout()" >Logout</a>
+      </div>
+    </ng-container>
+
+
+    
+   
+    
+  </ng-template>
+  
+  <ng-template #viewLog >
+
+    <div>
+      <a mat-button (click)="onLogoutCliente()" >Salir</a>
+    </div>
+  </ng-template>

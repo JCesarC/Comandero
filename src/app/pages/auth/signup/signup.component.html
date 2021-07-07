@@ -1,0 +1,31 @@
+<div class="login-form">
+    <mat-card>
+      <mat-card-content>
+        <h1>Bienvenido</h1>
+        <h4>Para acceder por favor ingresa tu numbre completo y la mesa de la orden </h4>
+        <form [formGroup]="loginForm" (ngSubmit) ="onLogin()" action="" autocomplete="off">
+          <mat-form-field class="full-width-input">
+            <input text="text"
+               formControlName="nombre" 
+               matInput
+                  placeholder="Nombre(s)"
+               required />
+          </mat-form-field>
+  
+          <mat-form-field class="full-width-input separator">
+              <mat-label>MESA</mat-label>
+                <mat-select [(ngModel)]="selectedValue" name="mesa" formControlName="mesa" >
+                    <mat-option *ngFor="let mesa of mesas" [value]="mesa.value">
+                        {{mesa.viewValue}}
+                    </mat-option>
+                </mat-select>
+  
+          </mat-form-field>
+          <button type="submit" mat-raised-button
+              color="primary"> 
+              Acceder
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>

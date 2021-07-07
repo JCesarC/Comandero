@@ -1,0 +1,31 @@
+<div class="login-form">
+  <mat-card>
+    <mat-card-content>
+      <h1>Login Administrador</h1>
+      <form [formGroup]="loginForm" (ngSubmit) ="onLogin()" action="" autocomplete="off">
+        <mat-form-field class="full-width-input">
+          <input text="text"
+             formControlName="username" 
+             matInput
+                placeholder="Usuario"
+             required />
+        </mat-form-field>
+
+        <mat-form-field class="full-width-input separator">
+            <input 
+                type="password"
+                formControlName="password"
+                matInput
+                placeholder="Contraseña"
+                required
+            />
+
+        </mat-form-field>
+        <button type="submit" mat-raised-button
+            color="primary"> 
+            Acceder
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

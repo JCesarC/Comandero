@@ -1,0 +1,39 @@
+<section id="menu" class="menu">
+  <div class="container">
+    <div class="section-title">
+      <h2 class="title">Checa nuestro Delicioso y exquisito <span>Menú</span></h2>
+    </div>
+
+    <div>
+      <div class="col-md-8">
+        <h2 class="title titulos-cat">Productos:</h2>
+      </div>
+
+      <mat-tab-group >
+        <mat-tab *ngFor="let categoria of categorias"label="{{categoria.descripcion}}" > 
+          <div class="container categorias" >
+            <div class="row">
+              <div class="col-md-8">
+                <div class="container productos" *ngFor="let producto of productos" >
+                  <div class="row" *ngIf="producto.categoriaDescripcion === categoria.descripcion">
+                    <div class="col nombrepro"><span class="productosspan left" > {{producto.descripcion}} </span></div>
+                    <div class="col"><span class="precio middle"> ${{producto.precio}} </span> </div>
+                    <div class="col"> <button (click)="onAdd(producto.id); showNotification()" class="agregar right" mat-raised-button color="primary">Agregar</button> </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-md-4">
+                <img class="w-100 shadow-1-strong rounded mb-4" src="../../../../assets/img/{{categoria.descripcion}}.jpg" alt="">
+              </div>
+            </div>
+            
+
+          </div>
+            
+
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+  </div>
+
+</section>

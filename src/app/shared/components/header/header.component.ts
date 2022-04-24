@@ -39,11 +39,18 @@ export class HeaderComponent implements OnInit, OnDestroy, AfterViewInit{
     }else{
       this.isLoggedCliente = false;
     }
+
+    let user = JSON.parse(localStorage.getItem('user')) || null;
+    if(user !== null){
+      this.isLogged = true;
+    }else{
+      this.isLogged = false;
+    }
     
     this.authSvc.user$
     .pipe(takeUntil(this.destroy$))
     .subscribe((user:UserResponse)=>{
-      this.isLogged=true;
+      
       this.isAdmin= user?.role;
     });
 

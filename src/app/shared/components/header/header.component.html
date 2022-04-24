@@ -2,24 +2,23 @@
     <ng-container >
      
     </ng-container>
-    <span>Restaurante La Teja</span>
+    <span>Comandero de Ordenes de Restaurante La Teja</span>
     <span class="spacer"></span>
-    <a  mat-button
-    *ngIf="!isLogged; else viewLogout"
-    routerLink="/login">Login Administrador</a>
+    <div *ngIf="!isLogged; else viewLogout">
+      <a *ngIf="!isLoggedCliente"  mat-button
+    
+      routerLink="/login">Login Administrador</a>
+      
+      <a *ngIf="!isLoggedCliente; else viewLog"  mat-button
+      
+      routerLink="/signup">Acceder Cliente</a>
+    </div>
 
-    <a *ngIf="!isLoggedCliente"  mat-button
-    
-    routerLink="/login">Login Administrador</a>
-    
-    <a *ngIf="!isLoggedCliente; else viewLog"  mat-button
-    
-    routerLink="/signup">Acceder Cliente</a>
+   
 
     <a 
     *ngIf="isLoggedCliente"
     mat-button
-    
     routerLink="/cliente/menu">Menú</a>
 
     <a *ngIf="isLoggedCliente"
@@ -45,11 +44,11 @@
   </mat-toolbar>
   
   <ng-template #viewLogout>
-    <ng-container  *ngIf="isAdmin ==='admin'">
+   
       <div>
         <a mat-button (click)="onLogout()" >Logout</a>
       </div>
-    </ng-container>
+ 
 
 
     

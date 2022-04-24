@@ -128,7 +128,7 @@ export class CartComponent implements OnInit, OnDestroy {
     }
 
     const dialogRef= this.dialog.open(ModalClienteComponent,{
-      height:'400px',
+      height:'200px',
       width:'600px',
       hasBackdrop:false,
       data:{title:'Orden confirmada',cliente:nombre_cliente, message:'Gracias por compra, tu orden será revisada por un administrador y será confirmada enseguida'},
